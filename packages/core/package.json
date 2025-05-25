@@ -1,0 +1,26 @@
+{
+  "name": "@hisui/core",
+  "version": "1.0.0",
+  "description": "Core package for Hisui framework.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p ."
+  },
+  "keywords": [
+    "discord",
+    "discord.js",
+    "framework",
+    "hisui"
+  ],
+  "author": "Aneks",
+  "license": "ISC",
+  "packageManager": "pnpm@10.9.0",
+  "dependencies": {
+    "@types/node": "^22.15.21",
+    "chalk": "^5.4.1",
+    "discord.js": "^14.19.3",
+    "mongodb": "^6.15.0"
+  },
+  "files": ["dist/", "types/"],
+  "types": "types/index.d.ts"
+}

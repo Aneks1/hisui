@@ -1,0 +1,14 @@
+{
+  "name": "test",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p ."
+  },
+  "packageManager": "pnpm@10.9.0",
+  "dependencies": {
+    "@hisui/core": "workspace:*",
+    "discord.js": "^14.19.3"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "hisui",
+  "version": "0.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "test": "node apps/test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.9.0",
+  "dependencies": {
+    "@changesets/cli": "^2.29.2",
+    "turbo": "^2.5.2"
+  }
+}
