@@ -1,4 +1,4 @@
-import { Client, ClientOptions } from "discord.js"
+import { Client, ClientOptions, EmbedBuilder, SendableChannels, SendableChannelTypes, TextBasedChannel, TextChannel } from "discord.js"
 import EventHandler from "./EventHandler"
 import CommandHandler from "./CommandHandler"
 import { Db, MongoClient } from "mongodb"
@@ -25,6 +25,20 @@ export default class HisuiClient extends Client {
         const configPath = path.resolve(process.cwd(), "hisui.config.ts")
         const config = (await import(configPath)).default
         return this.config = config
+    }
+
+    public async logError(description: string) {
+        if(this.config.errorChannelId) { throw new Error('Error channel ID is not set in hisui.config.ts.') }
+        const channel = await this.channels.fetch(this.config.errorChannelId)
+        if(!channel || !channel?.isTextBased()) { throw new Error('Error logs channel must be text-based and sendable.') }
+        return (channel as TextChannel).send({
+            embeds: [
+                new EmbedBuilder()
+                .setTitle('Error')
+                .setDescription(description)
+                .setTimestamp()
+            ]
+        })
     }
 
     constructor(clientOptions: ClientOptions) {

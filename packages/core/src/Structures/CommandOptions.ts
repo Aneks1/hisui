@@ -2,6 +2,7 @@ import { ApplicationCommandOptionData, ChannelType, PermissionResolvable, Snowfl
 import Context from "./Context";
 
 export default interface CommandOptions {
+    name: string
     description: string
     disabled?: boolean
     args: ApplicationCommandOptionData[]

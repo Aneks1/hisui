@@ -15,6 +15,15 @@ importers:
         specifier: ^2.5.2
         version: 2.5.2
 
+  apps/sell-a-brainrot:
+    dependencies:
+      '@hisui/core':
+        specifier: workspace:*
+        version: link:../../packages/core
+      discord.js:
+        specifier: ^14.19.3
+        version: 14.19.3
+
   apps/test:
     dependencies:
       '@hisui/core':
